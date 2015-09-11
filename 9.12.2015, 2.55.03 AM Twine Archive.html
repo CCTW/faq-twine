@@ -68,9 +68,24 @@ tw-storydata{display:none}
 @media screen and (max-device-width:480px){
 	#passage{font-size:70%}}
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
-
-</script><tw-passagedata pid="1" name="你需要什麼呢？" tags="" position="801,357"># 你需要什麼呢？
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var pid = '';
+var addHistory = function(){
+	setTimeout(function(){
+		$('tw-link').on('click tap', function(){
+			var passagename = $(this).attr('passage-name');
+			pid = $('tw-passagedata[name="' + passagename + '"]').attr('pid');
+			console.log(pid);
+			history.pushState(null, null, window.location.pathname + '#' + pid );
+			addHistory();
+		});
+		$('tw-sidebar tw-icon').on('click tap', function(){
+			console.log('blah');
+			addHistory();
+		});
+	},1000);
+};
+addHistory();
+</script><tw-passagedata pid="1" name="你需要什麼呢？" tags="" position="801,351"># 你需要什麼呢？
 
 [[認識創用 CC-&gt;你現在腦袋裡第一個問題是？]]
 
@@ -81,7 +96,7 @@ tw-storydata{display:none}
 [[成為種子講員-&gt;你熟悉哪個領域呢？]]
 
 [[以上皆非-&gt;台灣創用 CC 一日遊：補充包]]
-</tw-passagedata><tw-passagedata pid="2" name="你的作品屬於什麼類型？" tags="" position="658,653"># 你的作品屬於什麼類型？
+</tw-passagedata><tw-passagedata pid="2" name="你的作品屬於什麼類型？" tags="" position="606,600"># 你的作品屬於什麼類型？
 
 [[文字-&gt;我要發表文字作品]]
 
@@ -89,7 +104,7 @@ tw-storydata{display:none}
 
 [[聲音-&gt;我要發表聲音作品]]
 
-[[影音-&gt;我要發表影音作品]]</tw-passagedata><tw-passagedata pid="3" name="Start" tags="" position="799,204"># 歡迎
+[[影音-&gt;我要發表影音作品]]</tw-passagedata><tw-passagedata pid="3" name="Start" tags="" position="802,196"># 歡迎
 
 你是創作者、使用者、推廣者、還是創用 CC 授權的初心者呢？這裡整理了最常見的問答，讓你秒懂創用 CC 授權可以為你做哪些事。歡迎來到台灣創用 CC 一日遊！
 
@@ -108,7 +123,7 @@ tw-storydata{display:none}
 (set: $role = 0)
 (set: $domain = 0)
 (set: $level = 0)
-</tw-passagedata><tw-passagedata pid="4" name="你會需要移除作者署名嗎？" tags="" position="957,651"># 你會需要移除原作者的署名嗎？
+</tw-passagedata><tw-passagedata pid="4" name="你會需要移除作者署名嗎？" tags="" position="978,602"># 你會需要移除原作者的署名嗎？
 
 原作者的署名通常會放在你的署名旁邊、或者作品陳列處附近，呈現方式沒有硬性規定，只要達到「觀眾可以理解原作者的貢獻、並往回追溯到原作品出處」的目的，就可以了。（待求證）
 
@@ -116,7 +131,7 @@ tw-storydata{display:none}
 
 (set: $useBY = 1)[[不會，我很樂意將原作者的署名和我的作品一起發表-&gt;你會需要利用這個作品來賺錢嗎？]]
 
-</tw-passagedata><tw-passagedata pid="5" name="你現在腦袋裡第一個問題是？" tags="" position="501,200"># 你現在腦袋裡第一個問題是？
+</tw-passagedata><tw-passagedata pid="5" name="你現在腦袋裡第一個問題是？" tags="" position="500,349"># 你現在腦袋裡第一個問題是？
 
 [[創用 CC 能幹嘛？誰發明的？為什麼會出現？]]
 
@@ -128,13 +143,13 @@ tw-storydata{display:none}
 
 [[誰用過創用 CC 授權？誰不用？各自的原因是？]]
 
-[[以上皆非-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="6" name="你熟悉哪個領域呢？" tags="" position="1107,200"># 你會在哪個領域推廣創用 CC 呢？
+[[以上皆非-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="6" name="你熟悉哪個領域呢？" tags="" position="1105,355"># 你會在哪個領域推廣創用 CC 呢？
 
 文創（）
 商業（）
 研究（）
 教育（）
-政府（）</tw-passagedata><tw-passagedata pid="7" name="About" tags="" position="803,49"># 關於本站
+政府（）</tw-passagedata><tw-passagedata pid="7" name="About" tags="" position="805,50"># 關於本站
 
 這個可愛的網站，是 ETBlue 使用開源遊戲軟體 Twine 製作的。之所以會做這個，是因為參與了 2015 年的 CC.tw 種子講員培訓計畫，結果在研讀官方的 FAQ 時，被數量龐大的問答題庫資料擊倒，於是決定把這些 FAQ 整理成自己方便閱讀的形式。全站內容採 CC BY 授權釋出，需要的話請儘管拿去用吧 ^_^
 
@@ -152,7 +167,7 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="8" name="創用 CC 能幹嘛？誰發明的？為什麼會出現？" tags="" position="497,52">## 創用 CC 能拿來做什麼事情
+</tw-passagedata><tw-passagedata pid="8" name="創用 CC 能幹嘛？誰發明的？為什麼會出現？" tags="" position="201,94">## 創用 CC 能拿來做什麼事情
 
 
 ## 為什麼人類會發明創用 CC 授權
@@ -160,7 +175,7 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="9" name="用別人的創用 CC 作品，不用付錢對吧？會有後遺症嗎？" tags="" position="345,56"># 用別人的創用 CC 作品
+</tw-passagedata><tw-passagedata pid="9" name="用別人的創用 CC 作品，不用付錢對吧？會有後遺症嗎？" tags="" position="203,219"># 用別人的創用 CC 作品
 
 ## 要付錢嗎？
 
@@ -170,7 +185,7 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="10" name="以創用 CC 發表我的作品，會比較容易走紅嗎？會被盜版嗎？" tags="" position="343,207"># 以創用CC授權發表作品
+</tw-passagedata><tw-passagedata pid="10" name="以創用 CC 發表我的作品，會比較容易走紅嗎？會被盜版嗎？" tags="" position="201,344"># 以創用CC授權發表作品
 
 ## 會比較多人來欣賞我的作品嗎？
 
@@ -180,7 +195,7 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="11" name="誰用過創用 CC 授權？誰不用？各自的原因是？" tags="" position="499,352">## 哪些人選擇使用創用CC授權？原因是？
+</tw-passagedata><tw-passagedata pid="11" name="誰用過創用 CC 授權？誰不用？各自的原因是？" tags="" position="203,601">## 哪些人選擇使用創用CC授權？原因是？
 
 
 
@@ -189,7 +204,7 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="12" name="台灣創用 CC 一日遊：補充包" tags="" position="650,48"># 台灣創用 CC 一日遊：補充包
+</tw-passagedata><tw-passagedata pid="12" name="台灣創用 CC 一日遊：補充包" tags="" position="807,501"># 台灣創用 CC 一日遊：補充包
 
 這個網站無法滿足你的需要！你可以到本站共筆區鞭打作者改善內容，或者直接閱讀官方提供的詳盡文件：
 
@@ -201,20 +216,20 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="13" name="向大眾推廣創用 CC，會不會助長侵犯著作權的風氣？" tags="" position="348,352">## 向大眾推廣創用 CC，會不會助長侵犯著作權的風氣？
+</tw-passagedata><tw-passagedata pid="13" name="向大眾推廣創用 CC，會不會助長侵犯著作權的風氣？" tags="" position="200,472">## 向大眾推廣創用 CC，會不會助長侵犯著作權的風氣？
 
 不會。
 
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="14" name="你需要搜尋 CC0 公眾領域授權的作品" tags="" position="1102,652"># 你需要搜尋 CC0 公眾領域授權的作品
+</tw-passagedata><tw-passagedata pid="14" name="你需要搜尋 CC0 公眾領域授權的作品" tags="" position="1105,600"># 你需要搜尋 CC0 公眾領域授權的作品
 
 
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="15" name="你會需要利用這個作品來賺錢嗎？" tags="" position="957,806">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="我要發表文字作品" tags="" position="504,498"># 你希望別人使用你的文字作品時註明來源嗎？
+</tw-passagedata><tw-passagedata pid="15" name="你會需要利用這個作品來賺錢嗎？" tags="" position="978,732">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="我要發表文字作品" tags="" position="399,803"># 你希望別人使用你的文字作品時註明來源嗎？
 
 (set: $shareBY = 1)[[是，使用我的作品，請註明原作者跟出處-&gt;我的文字作品不適合CC0]]
 以下任一狀況，建議選擇註明出處：
@@ -222,12 +237,12 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 2. 作品帶有某個特別的意義，希望能向其他人傳達初衷
 3. 作品內容中有使用到其他人的授權作品
 
-(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;我適合使用CC0公眾領域授權釋出作品]]
+(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;你適合使用CC0公眾領域授權釋出作品]]
 符合以下狀況，可以選擇不註明出處：
 1. 作品本身是客觀的紀錄或資料，沒有主觀見解。例如：全台各地雨量紀錄資料庫
 2. 作品內容中沒有使用到其他人的授權作品
 
-[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="17" name="我要發表圖像作品" tags="" position="504,649"># 你希望別人使用你的圖像作品時註明來源嗎？
+[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="17" name="我要發表圖像作品" tags="" position="524,804"># 你希望別人使用你的圖像作品時註明來源嗎？
 
 (set: $shareBY = 1)[[是，使用我的作品，請註明原作者跟出處-&gt;我的圖像作品不適合CC0]]
 以下任一狀況，建議選擇註明出處：
@@ -235,12 +250,12 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 2. 作品帶有某個特別的意義，希望能向其他人傳達初衷
 3. 作品畫面中有使用到其他人的授權作品
 
-(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;我適合使用CC0公眾領域授權釋出作品]]
+(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;你適合使用CC0公眾領域授權釋出作品]]
 符合以下狀況，可以選擇不註明出處：
 1. 作品本身是客觀的紀錄或資料，沒有人工創意成分。例如：公路攝影機拍下的超速照片
 2. 作品畫面中沒有使用到其他人的授權作品
 
-[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="18" name="我要發表聲音作品" tags="" position="497,799"># 你希望別人使用你的聲音作品時註明來源嗎？
+[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="18" name="我要發表聲音作品" tags="" position="654,803"># 你希望別人使用你的聲音作品時註明來源嗎？
 
 (set: $shareBY = 1)[[是，使用我的作品，請註明原作者跟出處-&gt;我的聲音作品不適合CC0]]
 以下任一狀況，建議選擇註明出處：
@@ -248,12 +263,12 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 2. 作品帶有某個特別的意義，希望能向其他人傳達初衷
 3. 作品音軌中有使用到其他人的授權作品
 
-(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;我適合使用CC0公眾領域授權釋出作品]]
+(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;你適合使用CC0公眾領域授權釋出作品]]
 符合以下狀況，可以選擇不註明出處：
 1. 作品本身是客觀的紀錄或資料，沒有人工創意成分。例如：紀錄某台故障機器所發出的噪音
 2. 作品音軌中沒有使用到其他人的授權作品
 
-[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="19" name="我要發表影音作品" tags="" position="655,805"># 你希望別人使用你的影音作品時註明來源嗎？
+[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="19" name="我要發表影音作品" tags="" position="783,805"># 你希望別人使用你的影音作品時註明來源嗎？
 
 (set: $shareBY = 1)[[是，使用我的作品，請註明原作者跟出處-&gt;我的影音作品不適合CC0]]
 以下任一狀況，建議選擇註明出處：
@@ -261,16 +276,30 @@ FYI，2015 年的 CC.tw 種子講員培訓計畫由台灣中研院資創中心�
 2. 作品帶有某個特別的意義，希望能向其他人傳達初衷
 3. 作品畫面或音軌中有使用到其他人的授權作品
 
-(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;我適合使用CC0公眾領域授權釋出作品]]
+(set: $shareBY = 0)[[不，使用我的作品，不需要註明原作者跟出處-&gt;你適合使用CC0公眾領域授權釋出作品]]
 符合以下狀況，可以選擇不註明出處：
 1. 作品本身是客觀的紀錄或資料，沒有人工創意成分。例如：行車記錄器的影片
 2. 作品畫面或音軌中沒有使用到其他人的授權作品
 
-[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="20" name="我的文字作品不適合CC0" tags="" position="346,503">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="21" name="我適合使用CC0公眾領域授權釋出作品" tags="" position="649,355"># 你適合使用 CC0 公眾領域授權釋出作品
+[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="20" name="我的文字作品不適合CC0" tags="" position="398,929"># 你自己將來有打算用作品來營利嗎？
+
+(set: $shareNC = 1)[[是，我將來打算用作品營利，希望能保留商業上的權利-&gt;我的文字作品不適合CC BY]]
+所謂的營利包括：出版成書籍收取版稅、投稿到刊物收取稿費、讓其他媒體轉載收取授權費... 等有金錢或物質報酬的用途。保留商業權利的授權方式，適合一開始就有長遠商業計畫、或作者將來可能以此謀生的作品。
+
+(set: $shareNC = 0)[[不，我不打算用作品來營利，不需保留商業上的權利-&gt;你適合使用 CC BY 授權釋出作品]]
+
+
+[[看完以上說明，我還是無法決定-&gt;台灣創用 CC 一日遊：補充包]]</tw-passagedata><tw-passagedata pid="21" name="你適合使用CC0公眾領域授權釋出作品" tags="" position="201,803"># 你適合使用 CC0 公眾領域授權釋出作品
 
 
 
 
 [[回首頁-&gt;Start]]
-</tw-passagedata><tw-passagedata pid="22" name="我的圖像作品不適合CC0" tags="" position="347,651">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="23" name="我的聲音作品不適合CC0" tags="" position="497,949">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="我的影音作品不適合CC0" tags="" position="655,955">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="22" name="我的圖像作品不適合CC0" tags="" position="528,931">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="23" name="我的聲音作品不適合CC0" tags="" position="659,931">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="我的影音作品不適合CC0" tags="" position="784,930">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="25" name="你適合使用 CC BY 授權釋出作品" tags="" position="200,930"># 你適合使用 CC BY 姓名標示授權釋出作品
+
+
+
+
+[[回首頁-&gt;Start]]
+</tw-passagedata><tw-passagedata pid="26" name="我的文字作品不適合CC BY" tags="" position="400,1054">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
